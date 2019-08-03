@@ -50,41 +50,40 @@ var allFeeds = [
 
 The `feedreader.js` file contains four Testing Suites:
 
- * RSS Feeds
+##### RSS Feeds
+###### `are defined`
+    * Test runs by checking that array.length is not equal to 0
 
-  * are defined
-   * Test runs by checking that array.length is not equal to 0
-
-  * URLs are defined
-   * Test runs by checking that value.length of `url` property is not equal to 0
-
-  * names are defined
+  ###### `URLs are defined`
     * Test runs by checking that value.length of `url` property is not equal to 0
 
- * The menu
-  * is hidden by default
-   * Test checks if ```html <body>``` contains `.menu-hidden`
+  ###### `names are defined`
+    * Test runs by checking that value.length of `url` property is not equal to 0
 
-  * displays and hides onclick
-   * Test checks if menu shows and hides on click by using `click()` jQuery function
-   * `click()` on `.menu-icon-link` -> check if ```html <body>``` contains `.menu-hidden`
+##### The menu
+###### `is hidden by default`
+    * Test checks if ```html <body>``` contains `.menu-hidden`
 
- * Initial Entries
-  * have loaded
-   * Test checks if URLs have been loaded
-   * loads URL using `beforeEach`, looks then if `.entry` classes are greater than 0
+###### `displays and hides onclick`
+    * Test checks if menu shows and hides on click by using `click()` jQuery function
+    * `click()` on `.menu-icon-link` -> check if ```html <body>``` contains `.menu-hidden`
 
- * New Feed Selection
-  * actually changes content
-   * Test checks if loaded Feed Content changes
-   * loads two URLs using `beforeEach`, compares then content of both loaded feeds using `.innerText` method
+##### Initial Entries
+###### `have loaded`
+    * Test checks if URLs have been loaded
+    * loads URL using `beforeEach`, looks then if `.entry` classes are greater than 0
+
+##### New Feed Selection
+###### `actually changes content`
+    * Test checks if loaded Feed Content changes
+    * loads two URLs using `beforeEach`, compares then content of both loaded feeds using `.innerText` method
 
 ## Useful Links
 
-[Jasmine Home](https://jasmine.github.io/)
-[Jasmine cheatsheet](https://devhints.io/jasmine)
-[Handlebar.js Home](https://handlebarsjs.com/)
-[jQuery Home](https://jquery.com/)
+ * [Jasmine Home](https://jasmine.github.io/)
+ * [Jasmine cheatsheet](https://devhints.io/jasmine)
+ * [Handlebar.js Home](https://handlebarsjs.com/)
+ * [jQuery Home](https://jquery.com/)
 
 ## Additional information
 
