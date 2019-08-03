@@ -66,21 +66,32 @@ $(
              * should have two expectations: does the menu display when
              * clicked and does it hide when clicked again.
              */
+
+            it("menu onclick", function() {
+                let menuIcon = $(".menu-icon-link");
+                menuIcon.click();
+                let open = $("body").hasClass("menu-hidden");
+                expect(open).toBe(false);
+                menuIcon.click();
+                let hide = $("body").hasClass("menu-hidden");
+                expect(hide).toBe(true);
+            });
         });
         /* TODO: Write a new test suite named "Initial Entries" */
-
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
-
+        describe("Initial Entries", function() {
+            /* TODO: Write a test that ensures when the loadFeed
+             * function is called and completes its work, there is at least
+             * a single .entry element within the .feed container.
+             * Remember, loadFeed() is asynchronous so this test will require
+             * the use of Jasmine's beforeEach and asynchronous done() function.
+             */
+        });
         /* TODO: Write a new test suite named "New Feed Selection" */
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        describe("New Feed Selection", function() {
+            /* TODO: Write a test that ensures when a new feed is loaded
+             * by the loadFeed function that the content actually changes.
+             * Remember, loadFeed() is asynchronous.
+             */
+        });
     })()
 );
