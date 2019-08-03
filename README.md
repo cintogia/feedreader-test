@@ -66,7 +66,7 @@ Test checks if ```html <body>``` contains `.menu-hidden`
 
 ###### `displays and hides onclick`
 Test checks if menu shows and hides on click by using `click()` jQuery function
-`click()` on `.menu-icon-link` -> check if ```html <body>``` contains `.menu-hidden`
+`click()` on `.menu-icon-link` -> check if ```<body>``` contains `.menu-hidden`
 
 #### Initial Entries
 ###### `have loaded`
