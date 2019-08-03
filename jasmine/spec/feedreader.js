@@ -31,7 +31,7 @@ $(
              * in the allFeeds object and ensures it has a URL defined
              * and that the URL is not empty.
              */
-            it("URL defined", function() {
+            it("URLs are defined", function() {
                 for (let i of allFeeds) {
                     expect(i.url).toBeDefined();
                     expect(i.url.length).not.toBe(0);
@@ -42,7 +42,7 @@ $(
              * in the allFeeds object and ensures it has a name defined
              * and that the name is not empty.
              */
-            it("name defined", function() {
+            it("names are defined", function() {
                 for (let i of allFeeds) {
                     expect(i.name).toBeDefined();
                     expect(i.name.length).not.toBe(0);
@@ -57,7 +57,7 @@ $(
              * the CSS to determine how we're performing the
              * hiding/showing of the menu element.
              */
-            it("menu hidden", function() {
+            it("is hidden by default", function() {
                 let body = $("body").hasClass("menu-hidden");
                 expect(body).toBe(true);
             });
@@ -66,7 +66,7 @@ $(
              * should have two expectations: does the menu display when
              * clicked and does it hide when clicked again.
              */
-            it("menu onclick", function() {
+            it("displays and hides onclick", function() {
                 let menuIcon = $(".menu-icon-link");
                 menuIcon.click();
                 let open = $("body").hasClass("menu-hidden");
@@ -90,7 +90,7 @@ $(
                 loadFeed(0, done);
             });
 
-            it("feed loaded", function(done) {
+            it("have loaded", function(done) {
                 let entries = $(".entry").length;
                 expect(entries).not.toBe(0);
                 done();
@@ -103,6 +103,20 @@ $(
              * by the loadFeed function that the content actually changes.
              * Remember, loadFeed() is asynchronous.
              */
+            beforeEach(function(done) {
+                loadFeed(0, function() {
+                    firstFeed = $('.feed')[0].innerText;
+                    loadFeed(2, function() {
+                        secondFeed = $('.feed')[0].innerText;
+                        done();
+                    });
+                });
+            });
+
+            it("actually changes content", function(done) {
+                expect(firstFeed).not.toEqual(secondFeed);
+                done();
+            });
         });
     })()
 );
