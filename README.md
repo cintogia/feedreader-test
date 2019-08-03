@@ -50,7 +50,7 @@ var allFeeds = [
 
 The `feedreader.js` file contains four Testing Suites:
 
-##### RSS Feeds
+#### RSS Feeds
 ###### `are defined`
     * Test runs by checking that array.length is not equal to 0
 
@@ -60,7 +60,7 @@ The `feedreader.js` file contains four Testing Suites:
   ###### `names are defined`
     * Test runs by checking that value.length of `url` property is not equal to 0
 
-##### The menu
+#### The menu
 ###### `is hidden by default`
     * Test checks if ```html <body>``` contains `.menu-hidden`
 
@@ -68,12 +68,12 @@ The `feedreader.js` file contains four Testing Suites:
     * Test checks if menu shows and hides on click by using `click()` jQuery function
     * `click()` on `.menu-icon-link` -> check if ```html <body>``` contains `.menu-hidden`
 
-##### Initial Entries
+#### Initial Entries
 ###### `have loaded`
     * Test checks if URLs have been loaded
     * loads URL using `beforeEach`, looks then if `.entry` classes are greater than 0
 
-##### New Feed Selection
+#### New Feed Selection
 ###### `actually changes content`
     * Test checks if loaded Feed Content changes
     * loads two URLs using `beforeEach`, compares then content of both loaded feeds using `.innerText` method
