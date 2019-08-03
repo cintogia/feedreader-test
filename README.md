@@ -21,10 +21,26 @@ You can also clone this repository using Git `$ git clone https://github.com/cin
 
 ## Getting started
 
-#### This site is using [jQuery](https://github.com/jquery/jquery) and [Handlebars.js](https://github.com/wycats/handlebars.js/)
+#### This application is using [jQuery](https://github.com/jquery/jquery) and [Handlebars.js](https://github.com/wycats/handlebars.js/)
 
-You can find the Feedreader Testing Suite by opening the `/jasmine/spec/feedreader.js` file.
-RSS Feeds are stored in the `/js/app.js` file. Additional URLs can be added to the `allFeeds` array by passing a name and url.
+You can find the Feedreader Testing Suite by opening the `/jasmine/spec/feedreader.js` spec file.
+
+RSS Feeds are stored in the `/js/app.js` file. Additional URLs can be added to the `allFeeds` array by passing a `name` and `url`.
+
+***If you want to use the spec file only, then please make sure to include the jasmine framework and jQuery library in your application by downloading it from their website (see links below) or including this snippet into your index.html file***
+
+```html
+<!-- Jasmine CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.min.css">
+<!-- Jasmine scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.min.js"></script>
+<!-- Jasmine spec file -->
+<script src="YOUR SPEC FILE LOCATION"></script>
+<!-- jQuery script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+```
 
 #### default URLs are:
 
@@ -58,15 +74,15 @@ Test runs by checking that array.length is not equal to 0
 Test runs by checking that value.length of `url` property is not equal to 0
 
 ###### `names are defined`
-Test runs by checking that value.length of `url` property is not equal to 0
+Test runs by checking that value.length of `name` property is not equal to 0
 
 #### The menu
 ###### `is hidden by default`
-Test checks if ```html <body>``` contains `.menu-hidden`
+Test checks if `<body>` contains `.menu-hidden`
 
 ###### `displays and hides onclick`
 Test checks if menu shows and hides on click by using `click()` jQuery function
-`click()` on `.menu-icon-link` -> check if ```<body>``` contains `.menu-hidden`
+`click()` on `.menu-icon-link` -> check if `<body>` contains `.menu-hidden`
 
 #### Initial Entries
 ###### `have loaded`
@@ -87,4 +103,4 @@ loads two URLs using `beforeEach`, compares then content of both loaded feeds us
 
 ## Additional information
 
-This project is part of my @udacity Front-End Web Developer Nanodegree. Original repository can be found [here](https://github.com/udacity/frontend-nanodegree-feedreader)
+This project is part of my @udacity Front-End Web Developer Nanodegree. Original repository can be found [here](https://github.com/udacity/frontend-nanodegree-feedreader).

@@ -15,6 +15,7 @@ $(
          * feeds definitions, the allFeeds variable in our application.
          */
         describe("RSS Feeds", function() {
+
             /* This is our first test - it tests to make sure that the
              * allFeeds variable has been defined and that it is not
              * empty. Experiment with this before you get started on
@@ -22,6 +23,8 @@ $(
              * allFeeds in app.js to be an empty array and refresh the
              * page?
              */
+
+// Test runs by checking that allFeeds.length is not equal to 0
             it("are defined", function() {
                 expect(allFeeds).toBeDefined();
                 expect(allFeeds.length).not.toBe(0);
@@ -31,6 +34,8 @@ $(
              * in the allFeeds object and ensures it has a URL defined
              * and that the URL is not empty.
              */
+
+// Test runs by checking that value.length of 'url' property is not equal to 0
             it("URLs are defined", function() {
                 for (let i of allFeeds) {
                     expect(i.url).toBeDefined();
@@ -42,6 +47,8 @@ $(
              * in the allFeeds object and ensures it has a name defined
              * and that the name is not empty.
              */
+
+// Test runs by checking that value.length of 'name' property is not equal to 0
             it("names are defined", function() {
                 for (let i of allFeeds) {
                     expect(i.name).toBeDefined();
@@ -57,6 +64,7 @@ $(
              * the CSS to determine how we're performing the
              * hiding/showing of the menu element.
              */
+// Test checks if <body> contains .menu-hidden
             it("is hidden by default", function() {
                 let body = $("body").hasClass("menu-hidden");
                 expect(body).toBe(true);
@@ -66,6 +74,9 @@ $(
              * should have two expectations: does the menu display when
              * clicked and does it hide when clicked again.
              */
+
+// Test checks if menu shows and hides on click by using click() function
+// click() on .menu-icon-link -> check if <body> contains .menu-hidden
             it("displays and hides onclick", function() {
                 let menuIcon = $(".menu-icon-link");
                 menuIcon.click();
@@ -86,6 +97,9 @@ $(
              * the use of Jasmine's beforeEach and asynchronous done() function.
              */
 
+// Test checks if URLs have been loaded
+// loads URL using 'beforeEach', looks then if .entry classes are greater than 0
+
             beforeEach(function(done) {
                 loadFeed(0, done);
             });
@@ -103,6 +117,9 @@ $(
              * by the loadFeed function that the content actually changes.
              * Remember, loadFeed() is asynchronous.
              */
+
+// Test checks if loaded Feed Content changes
+// loads two URLs using beforeEach, compares then content of both loaded feeds using .innerText method
             beforeEach(function(done) {
                 loadFeed(0, function() {
                     firstFeed = $('.feed')[0].innerText;
