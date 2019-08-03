@@ -66,7 +66,6 @@ $(
              * should have two expectations: does the menu display when
              * clicked and does it hide when clicked again.
              */
-
             it("menu onclick", function() {
                 let menuIcon = $(".menu-icon-link");
                 menuIcon.click();
@@ -77,6 +76,7 @@ $(
                 expect(hide).toBe(true);
             });
         });
+
         /* TODO: Write a new test suite named "Initial Entries" */
         describe("Initial Entries", function() {
             /* TODO: Write a test that ensures when the loadFeed
@@ -85,7 +85,18 @@ $(
              * Remember, loadFeed() is asynchronous so this test will require
              * the use of Jasmine's beforeEach and asynchronous done() function.
              */
+
+            beforeEach(function(done) {
+                loadFeed(0, done);
+            });
+
+            it("feed loaded", function(done) {
+                let entries = $(".entry").length;
+                expect(entries).not.toBe(0);
+                done();
+            });
         });
+
         /* TODO: Write a new test suite named "New Feed Selection" */
         describe("New Feed Selection", function() {
             /* TODO: Write a test that ensures when a new feed is loaded
